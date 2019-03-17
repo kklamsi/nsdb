@@ -1,0 +1,76 @@
+
+
+
+
+\section{Proposal}
+\label{sec:cp1-proposal}
+
+\subsection{Survey}
+\label{subsec:cp1-survey}
+
+This section is supposed to enumerate (at least) \emph{four} references and briefly summarize the main insight they provided (1 paragraph each). All references should also be included in the References section that concludes the report.
+
+\begin{packed_enum}
+   \item \ldots 
+   
+   \item \ldots
+   
+   \item \ldots H-Store
+   H-Store is an experimental database management system (DBMS) designed for online transaction processing applications that was developed by a team at Brown University, Carnegie Mellon University, the Massachusetts Institute of Technology, and Yale University in 2007. It is an example of a NewSQL database system.\\
+   The H-Store system is a highly distributed, row-storebased relational database that runs on a cluster on shared-nothing, main memory executor nodes. A single H-Store instance is defined as a cluster of two  or more computational nodes deployed within the same administrative domain. A node is a single physical computer  system that hosts one or more sites. The typical H-Store node has multiple processors and each site is assigned  to execute on exactly one processor core on a node. Each  site is independent from all other sites, and thus does not share any data structures or memory with collocated sites running on the same machine.\\
+   An advantage of H-Store is that it provides a similar performance to NoSQL systems while still maintaining the ACID guarantees for transactions.\\
+   
+   
+   \item \ldots
+   \item Additional references \ldots
+\end{packed_enum}
+
+\subsection{System}
+\label{subsec:cp1-system}
+
+We chose \ldots as the basis for our project.
+
+\paragraph{Rationale} Why is this type of system interesting to you? (1-2 paragraphs)
+
+In the following, discuss \emph{four} interesting features/capabilities/properties of the chosen system (1 paragraph each).
+\begin{packed_enum}
+    \item \ldots Fast Processing: Especially when working with large data sets, high speed is an essential factor. Spark makes this possible by using the concept of an Resilient Distributed Dataset (RDD), which allows it to transparently store data on memory and persist it to disc only when it is needed. This helps to reduce most of the disc read and write –  the main time consuming factors – of data processing. But Spark is also fast when data is stored on disk, and currently holds the world record for large-scale on-disk sorting.     
+    
+    \item \ldots Lazy Evaluation: Lazy evaluation in Spark means that the execution will not start until an action is triggered. Transformations are lazy in nature meaning when we call some operation in RDD, it does not execute immediately. Spark maintains the record of which operation is being called. So we can execute operation any time by calling an action on data. Hence, in lazy evaluation data is not loaded until it is necessary. By lazy evaluation, users can organize their Spark program into smaller operations. It reduces the number of passes on data by grouping operations. Lazy Evaluation also plays a key role in saving calculation overhead, since only necessary values get computed.
+    
+    \item \ldots  Support of a wide range of applications: In Spark, there is support for multiple languages like Java, R, Scala, or Python. This helps developers to create and run their applications on their familiar programming languages. Spark also contains a lot of libraries, including Spark SQL, Spark Streaming, the MLlib machine learning library, and GraphX. Again, it is easy to develop a parallel application, as Spark provides 80 high-level operators.
+    
+     \item \ldots Fault Tolerance: Spark provides fault tolerance through Spark abstraction-RDD. Spark RDDs are designed to handle the failure of any worker node in the cluster. RDD are immutable datasets, they remember the lineage of the deterministic operation. So, if because of worker node failure, a RDD partition is lost, it can be recomputed using lineage graph. Assuming that all of the RDD transformations are deterministic, the data in the final transformed RDD will always be the same irrespective of failures in the Spark cluster. Spark’s fault tolerance also enhances the efficiency as we can recover lost data by redundant data. As a result, in case of any failure, there is no need to restart the application from scratch. Overall, it can be ensured that the loss of data is reduced to zero.    
+    
+    \item Additional features/capabilities/properties: Open Source, 
+    Cost efficient, 
+    Active, Progressive and Expanding Spark Community, 
+    Real-Time Stream Processing  \ldots
+    
+\end{packed_enum}
+
+\subsection{Application Description}
+\label{subsec:cp1-application-description}
+
+Describe your application scenario (2-3 paragraphs) and justify why this fits your system of choice (1-2 paragraphs).
+
+\paragraph{Architectural Overview}
+
+Provide an overview on the planned architecture/pipeline of your application. For example: Programming language(s), 3rd-party libraries/frameworks and their role in your application pipeline (1 paragraph each), planned/desired deployment, \ldots
+
+\paragraph{Experimental Data}
+
+For each dataset, describe the origin and its properties/contents. Moreover, justify why the respective datasets suit your application (2-3 paragraphs each).
+
+\subsection{Roadmap}
+\label{subsec:cp1-roadmap}
+
+\emph{Optional}. Split your project into individual steps and provide a first roadmap for the semester. You may use the \verb|vroadmap| environment (see \verb|report.tex| for definition):
+
+\begin{vroadmap}
+  YYYY-mm-dd & Step 1 \tabularnewline
+  YYYY-mm-dd & Step 2 \tabularnewline
+  \ldots & \ldots \tabularnewline
+\end{vroadmap}
+
+\end{document}
