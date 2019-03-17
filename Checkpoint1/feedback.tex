@@ -1,0 +1,45 @@
+\section*{Feedback}
+\label{sec:feedback}
+
+Please answer the following questions for the respective checkpoints:
+
+\begin{packed_enum}[a)]
+  \item Was the checkpoint too easy/hard in any regard?
+  \item Did it take too much/little time? Please indicate the average time per
+    group member that was spent working on the checkpoint.
+  \item Are there any hints/references we should give future students?
+    Conversely, did you find any of our guidance misleading?
+  \item Do you have any suggestions for the instructors to more effectively
+    support students?
+  \item How about the grading scheme? Was it unambiguous and fair?
+  \item Any other comments (regarding, for example, the report template, the
+    principal setup of the class, the provided materials, \ldots)?
+\end{packed_enum}
+
+% Arguments:
+% #1 ... checkpoint number
+% #2 ... answer to feedback question a)
+% #3 ... answer to feedback question b)
+% #4 ... answer to feedback question c)
+% #5 ... answer to feedback question d)
+% #6 ... answer to feedback question e)
+% #7 ... answer to feedback question f)
+\newcommand{\cpfeedback}[7]{
+  \multirow{6}{*}{#1} & a) #2 \tabularnewline
+                      & b) #3 \tabularnewline
+                      & c) #4 \tabularnewline
+                      & d) #5 \tabularnewline
+                      & e) #6 \tabularnewline
+                      & f) #7 \tabularnewline\hline}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{cl}
+    Checkpoint  & Feedback \tabularnewline
+    \hline\hline
+    \IfFileExists{cp1.tex}{
+      \cpfeedback{01}{Fill this in for checkpoint 01}{\ldots}{\ldots}{\ldots}{\ldots}{\ldots}}{}
+    \IfFileExists{cp2.tex}{
+      \cpfeedback{02}{Fill this in for checkpoint 02}{\ldots}{\ldots}{\ldots}{\ldots}{\ldots}}{}
+  \end{tabular}
+\end{table}
