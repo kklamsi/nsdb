@@ -17,11 +17,20 @@ sc <- spark_connect(master = "spark://master:7077",
                     version = "2.4",
                     spark_home = "/usr/local/spark")
 
+
+# Retrieve the Spark installation directory
 spark_home <- "/usr/local/spark/"
 
+# Build path to start-master.sh
+start_all <- file.path(spark_home, "sbin", "start-all.sh")
 
+# Execute start-master.sh to start the cluster
+system2(start_all)
 
-system2()
+# Build path to stop-master.sh
+stop_all <- file.path(spark_home, "sbin", "stop-all.sh")
+
+# Execute stop-all.sh to stop the cluster
 
 
 #Finally we can disconect all connections
